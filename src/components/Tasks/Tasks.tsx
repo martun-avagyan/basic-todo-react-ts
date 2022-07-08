@@ -1,22 +1,15 @@
-import { FC } from "react";
-import TaskItem from "../TaskItem/TaskItem";
+import { useState } from "react";
 import ITask from "../../models/task";
-import css from "./Tasks.module.css";
+import NewTask from "./NewTask/NewTask";
+import AllCreatedTasks from "./AllCreatedTasks/AllCreatedTasks";
+const Tasks = (): JSX.Element => {
+  const [tasks, setTasks] = useState<ITask[]>([]);
 
-const Tasks: FC<{ tasks: ITask[]; removeTaskHandler: () => void }> = ({
-  tasks,
-  removeTaskHandler,
-}) => {
   return (
-    <ul className={css.tasks}>
-      {tasks.map((task) => (
-        <TaskItem
-          key={task.id}
-          onRemoveTask={removeTaskHandler}
-          text={task.text}
-        />
-      ))}
-    </ul>
+    <div>
+      <NewTask setTasks={setTasks} />
+      <AllCreatedTasks setTasks={setTasks} tasks={tasks} />
+    </div>
   );
 };
 
