@@ -1,6 +1,42 @@
 .item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin: 1rem 0;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   padding: 1rem;
   background-color: #f7f5ef;
+}
+button {
+  font: inherit;
+  background-color: #ebb002;
+  border: 1px solid #ebb002;
+  color: #201d0f;
+  padding: 0.5rem 1.5rem;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+button:hover,
+button:active {
+  background-color: #ebc002;
+  border-color: #ebc002;
+}
+
+.btns {
+  display: flex;
+  gap: 3px;
+}
+
+.done {
+  background-color: #02eb21;
+  border: 1px solid #6add47;
+}
+.edit {
+  background-color: #fffd79;
+  border: 1px solid #fde08a;
+}
+.delete {
+  background-color: #eb0202;
+  border: 1px solid #eb4402;
 }
